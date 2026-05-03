@@ -15,12 +15,14 @@
 如果使用 Cloudflare Pages：
 
 - Build command: 留空，或填写 `npm run build`
-- Build output directory: `/`
+- Build output directory: `public`
 - Framework preset: None
+
+不要把 Build output directory 填成 `/`。Cloudflare 会把构建环境根目录当成输出目录扫描，容易出现 `[ERROR] Asset too large`。
 
 ## 本地预览
 
-直接打开 `index.html` 即可预览。
+直接打开 `public/index.html` 即可预览。
 
 也可以使用任意静态服务器，例如：
 

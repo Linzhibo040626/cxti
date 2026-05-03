@@ -5,7 +5,7 @@
   "description": "CSTI 抽象人格测试，适合微信内打开的移动端静态网页。",
   "scripts": {
     "start": "npx serve .",
-    "build": "echo Static site: no build step required"
+    "build": "echo Static site ready in public"
   },
   "keywords": [
     "csti",
