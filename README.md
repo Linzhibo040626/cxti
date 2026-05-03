@@ -20,6 +20,15 @@
 
 不要把 Build output directory 填成 `/`。Cloudflare 会把构建环境根目录当成输出目录扫描，容易出现 `[ERROR] Asset too large`。
 
+如果 Cloudflare 使用 Workers / Wrangler 部署，项目已在 `wrangler.toml` 配置：
+
+```toml
+[assets]
+directory = "./public"
+```
+
+这可以避免 `[ERROR] Missing entry-point to Worker script or to assets directory`。
+
 ## 本地预览
 
 直接打开 `public/index.html` 即可预览。
