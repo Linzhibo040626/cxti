@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <meta
+      name="description"
+      content="CSTI 抽象人格测试，15 道有趣题目测出你的互联网抽象人物气质。"
+    />
+    <title>CSTI 抽象人格测试</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" id="start-screen">
+        <div class="toon-stage" aria-hidden="true">
+          <span class="bubble bubble-a"></span>
+          <span class="bubble bubble-b"></span>
+          <span class="bubble bubble-c"></span>
+          <span class="face face-left">
+            <i></i>
+            <b></b>
+          </span>
+          <span class="face face-right">
+            <i></i>
+            <b></b>
+          </span>
+        </div>
+
+        <div class="brand-row">
+          <span class="stamp">CSTI</span>
+          <span class="mini-tag">抽象人格测试</span>
+        </div>
+        <h1>你是哪一种<br />互联网抽象人格？</h1>
+        <p>
+          15 道竖屏小题，从表达方式、决策习惯、情绪燃点和整活路径里，测出一个最像你的抽象人物型。
+        </p>
+        <button class="primary-btn" id="start-btn" type="button">开始测试</button>
+        <p class="fine-print">娱乐向测试，不代表真实人物评价，也不构成心理学结论。</p>
+      </section>
+
+      <section class="quiz hidden" id="quiz-screen" aria-live="polite">
+        <header class="quiz-head">
+          <button class="icon-btn" id="back-btn" type="button" aria-label="上一题">‹</button>
+          <div class="progress-wrap" aria-label="测试进度">
+            <div class="progress-meta">
+              <span id="question-count">01 / 15</span>
+              <span id="trait-hint">抽象雷达启动</span>
+            </div>
+            <div class="progress-bar">
+              <span id="progress-fill"></span>
+            </div>
+          </div>
+        </header>
+
+        <article class="question-card">
+          <div class="question-kicker" id="question-kicker">场景题</div>
+          <h2 id="question-title"></h2>
+          <div class="options" id="options"></div>
+        </article>
+      </section>
+
+      <section class="result hidden" id="result-screen">
+        <div class="result-card">
+          <div class="result-topline">你的 CSTI 类型是</div>
+          <div class="avatar" id="result-avatar" aria-hidden="true"></div>
+          <h2 id="result-name"></h2>
+          <p class="result-subtitle" id="result-subtitle"></p>
+
+          <div class="meter-grid" id="meter-grid"></div>
+
+          <div class="result-block">
+            <h3>人格说明</h3>
+            <p id="result-desc"></p>
+          </div>
+
+          <div class="result-block">
+            <h3>抽象优势</h3>
+            <ul id="result-strengths"></ul>
+          </div>
+
+          <div class="button-row">
+            <button class="secondary-btn" id="restart-btn" type="button">再测一次</button>
+            <button class="primary-btn compact" id="copy-btn" type="button">复制结果</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
