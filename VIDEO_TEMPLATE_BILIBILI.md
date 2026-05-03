@@ -144,7 +144,7 @@ Bin哥 / JackeyLove / 韦世豪 / 周琦 ...
 - 快速展示 Codex 对话
 - GitHub 仓库页面
 - Cloudflare 部署页面
-- 腾讯云域名 `csti.site`
+- 腾讯云域名 `https://csti.site`
 
 配音：
 
@@ -152,7 +152,7 @@ Bin哥 / JackeyLove / 韦世豪 / 周琦 ...
 整个项目我是用 Codex 辅助写代码，
 然后推到 GitHub 开源，
 再用 Cloudflare 部署静态网页，
-最后用腾讯云买了域名 csti.site。
+最后用腾讯云买了域名 https://csti.site。
 从想法、代码、部署到域名上线，基本就是这一套流程。
 ```
 
@@ -163,7 +163,7 @@ Codex 写代码
 GitHub 开源
 Cloudflare 部署
 腾讯云购买域名
-csti.site 上线
+https://csti.site 上线
 ```
 
 ### 60-75 秒：引导访问
@@ -177,14 +177,14 @@ csti.site 上线
 
 ```text
 现在网站已经上线了。
-你可以直接打开 csti.site，测一下自己是哪种抽象人格。
+你可以直接打开 https://csti.site，测一下自己是哪种抽象人格。
 测完可以把结果发评论区，我想看看大家到底都是什么精神状态。
 ```
 
 字幕：
 
 ```text
-网址：csti.site
+网址：https://csti.site
 测完把结果发评论区
 ```
 
@@ -207,7 +207,7 @@ csti.site 上线
 
 ```text
 想看完整教程可以留言
-先去 csti.site 测一下
+先去 https://csti.site 测一下
 ```
 
 ## 简短版口播稿
@@ -222,7 +222,7 @@ csti.site 上线
 结果也不是简单用几个指数硬算，而是给每个名人设计了一套完整的答题组。
 
 这个网页我是用 Codex 写代码，GitHub 开源，Cloudflare 部署，最后在腾讯云买了域名。
-现在已经可以直接打开：csti.site。
+现在已经可以直接打开：https://csti.site。
 
 大家可以去测一下，看看自己到底是徐静雨、张雪峰、战鹰、李诞、王建国，还是更离谱的结果。
 测完把结果发评论区，我想看看 B 站到底哪种抽象人格最多。
@@ -244,14 +244,14 @@ csti.site 上线
 - 每 5-8 秒切一次画面
 - 题目展示不要太久，重点是让观众觉得“有意思，想测”
 - 结果名字可以快速飞入，制造信息密度
-- 最后 5 秒固定露出网址 `csti.site`
+- 最后 5 秒固定露出网址 `https://csti.site`
 
 ## B 站简介模板
 
 ```text
 我用 Codex + GitHub + Cloudflare + 腾讯云做了一个 CSTI 抽象人格测试网页。
 
-网站：csti.site
+网站：https://csti.site
 GitHub：https://github.com/Linzhibo040626/cxti
 
 娱乐向测试，不是严肃心理学，只负责抽象和好玩。
