@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSTI Bilibili Promo</title>
+    <style>
+      :root {
+        --ink: #141414;
+        --paper: #f8f6ef;
+        --yellow: #ffd84d;
+        --pink: #ff9bb3;
+        --blue: #79d4ff;
+        --green: #8be28b;
+        --violet: #b7a2ff;
+        --orange: #ffb15d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #171717;
+        font-family:
+          "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, sans-serif;
+      }
+
+      .stage {
+        position: relative;
+        width: min(100vw, 56.25vh);
+        aspect-ratio: 9 / 16;
+        overflow: hidden;
+        color: var(--ink);
+        background:
+          linear-gradient(90deg, rgba(20, 20, 20, 0.05) 1px, transparent 1px),
+          linear-gradient(rgba(20, 20, 20, 0.05) 1px, transparent 1px),
+          var(--paper);
+        background-size: 34px 34px;
+      }
+
+      .scene {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 76px 64px 92px;
+        opacity: 0;
+        transform: translateY(24px) scale(0.98);
+        transition:
+          opacity 0.45s ease,
+          transform 0.45s ease;
+      }
+
+      .scene.active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        z-index: 2;
+      }
+
+      .badge,
+      .chip {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        border: 5px solid var(--ink);
+        border-radius: 999px;
+        background: #fff;
+        box-shadow: 8px 8px 0 var(--ink);
+        font-weight: 900;
+      }
+
+      .badge {
+        padding: 10px 22px;
+        font-size: 38px;
+        background: var(--yellow);
+      }
+
+      .chip {
+        margin-top: 24px;
+        padding: 9px 18px;
+        font-size: 26px;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 38px;
+        font-size: 106px;
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-top: 26px;
+        font-size: 68px;
+        line-height: 1.06;
+      }
+
+      p {
+        margin-top: 26px;
+        font-size: 34px;
+        line-height: 1.48;
+        font-weight: 700;
+      }
+
+      .url {
+        color: var(--ink);
+        background: var(--yellow);
+        border: 5px solid var(--ink);
+        border-radius: 10px;
+        box-shadow: 8px 8px 0 var(--ink);
+        padding: 18px 22px;
+        font-size: 42px;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      .phone {
+        position: relative;
+        width: 680px;
+        height: 1180px;
+        margin: 28px auto 0;
+        border: 9px solid var(--ink);
+        border-radius: 42px;
+        background: #fffdfa;
+        box-shadow: 16px 16px 0 var(--ink);
+        overflow: hidden;
+      }
+
+      .phone::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 18px;
+        width: 150px;
+        height: 22px;
+        border-radius: 999px;
+        background: var(--ink);
+        transform: translateX(-50%);
+      }
+
+      .phone-inner {
+        position: absolute;
+        inset: 64px 36px 36px;
+        display: flex;
+        flex-direction: column;
+        border: 5px solid var(--ink);
+        border-radius: 18px;
+        background:
+          radial-gradient(circle at 18% 16%, var(--yellow) 0 70px, transparent 72px),
+          radial-gradient(circle at 82% 18%, var(--blue) 0 58px, transparent 60px),
+          radial-gradient(circle at 60% 82%, var(--pink) 0 72px, transparent 74px),
+          #fff;
+        padding: 42px;
+      }
+
+      .phone-title {
+        font-size: 78px;
+        line-height: 0.96;
+        font-weight: 950;
+      }
+
+      .phone-copy {
+        margin-top: 30px;
+        font-size: 28px;
+        line-height: 1.45;
+      }
+
+      .button {
+        margin-top: auto;
+        min-height: 92px;
+        display: grid;
+        place-items: center;
+        border: 5px solid var(--ink);
+        border-radius: 12px;
+        background: var(--yellow);
+        box-shadow: 8px 8px 0 var(--ink);
+        font-size: 32px;
+        font-weight: 950;
+      }
+
+      .question {
+        display: grid;
+        gap: 18px;
+        margin-top: 26px;
+      }
+
+      .question-title {
+        font-size: 48px;
+        line-height: 1.14;
+        font-weight: 950;
+      }
+
+      .option {
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        gap: 16px;
+        align-items: center;
+        min-height: 88px;
+        padding: 14px 18px;
+        border: 5px solid var(--ink);
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 7px 7px 0 var(--ink);
+        font-size: 24px;
+        line-height: 1.25;
+        font-weight: 900;
+      }
+
+      .letter {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border: 4px solid var(--ink);
+        border-radius: 50%;
+        background: var(--blue);
+      }
+
+      .result-name {
+        display: inline-block;
+        width: fit-content;
+        margin-top: 32px;
+        padding: 16px 28px;
+        border: 6px solid var(--ink);
+        border-radius: 16px;
+        background: var(--pink);
+        box-shadow: 10px 10px 0 var(--ink);
+        font-size: 88px;
+        line-height: 1;
+        font-weight: 950;
+      }
+
+      .names {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .names span {
+        padding: 10px 18px;
+        border: 4px solid var(--ink);
+        border-radius: 999px;
+        background: #fff;
+        box-shadow: 5px 5px 0 var(--ink);
+        font-size: 29px;
+        font-weight: 900;
+      }
+
+      .flow {
+        display: grid;
+        gap: 24px;
+        margin-top: 44px;
+      }
+
+      .flow-item {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        align-items: center;
+        gap: 22px;
+        border: 5px solid var(--ink);
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 8px 8px 0 var(--ink);
+        padding: 22px;
+      }
+
+      .flow-icon {
+        display: grid;
+        width: 92px;
+        height: 92px;
+        place-items: center;
+        border: 5px solid var(--ink);
+        border-radius: 50%;
+        background: var(--green);
+        font-size: 42px;
+        font-weight: 950;
+      }
+
+      .flow-title {
+        font-size: 38px;
+        font-weight: 950;
+      }
+
+      .flow-sub {
+        margin-top: 4px;
+        font-size: 24px;
+        color: #424242;
+        font-weight: 800;
+      }
+
+      .subtitle {
+        position: absolute;
+        left: 58px;
+        right: 58px;
+        bottom: 72px;
+        z-index: 10;
+        min-height: 94px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 24px;
+        border: 5px solid var(--ink);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 8px 8px 0 var(--ink);
+        text-align: center;
+        font-size: 30px;
+        line-height: 1.28;
+        font-weight: 950;
+      }
+
+      .progress {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 18px;
+        z-index: 20;
+        background: linear-gradient(90deg, var(--pink), var(--yellow), var(--blue));
+      }
+
+      .controls {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .controls button {
+        border: 0;
+        border-radius: 8px;
+        background: #fff;
+        padding: 10px 14px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .hide-ui .controls {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage" id="stage">
+      <section class="scene active" data-start="0" data-end="7">
+        <span class="badge">CSTI</span>
+        <h1>抽象人格<br />测试</h1>
+        <p>不测你是 I 人还是 E 人，直接测你像哪位互联网抽象名人。</p>
+        <div class="chip">https://csti.site</div>
+      </section>
+
+      <section class="scene" data-start="7" data-end="18">
+        <div class="phone">
+          <div class="phone-inner">
+            <div class="badge">CSTI</div>
+            <div class="phone-title">你是哪一种<br />互联网抽象人格？</div>
+            <div class="phone-copy">15 道竖屏小题，测出一个最像你的抽象名人结果。</div>
+            <div class="button">开始测试</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene" data-start="18" data-end="32">
+        <span class="badge">题目很抽象</span>
+        <div class="question">
+          <div class="question-title">群里有人说：人生就是一场大型加载失败。你怎么接？</div>
+          <div class="option"><span class="letter">A</span><span>先别悟，谁来定义一下加载失败？</span></div>
+          <div class="option"><span class="letter">B</span><span>我补一句：但会员可以跳过片头。</span></div>
+          <div class="option"><span class="letter">C</span><span>别崩，先吃饭，吃完再当哲学家。</span></div>
+        </div>
+      </section>
+
+      <section class="scene" data-start="32" data-end="44">
+        <span class="badge">不是乱算</span>
+        <h2>每个名人<br />都有专属答题组</h2>
+        <p>选项会随机打乱，但系统记录原始选择。最后按 15 位答案指纹匹配，避免某个结果疯狂刷屏。</p>
+      </section>
+
+      <section class="scene" data-start="44" data-end="58">
+        <span class="badge">可能结果</span>
+        <div class="names">
+          <span>徐静雨</span><span>峰哥</span><span>张雪峰</span><span>战鹰</span>
+          <span>何炅</span><span>黄磊</span><span>李诞</span><span>王建国</span>
+          <span>陈泽</span><span>马云</span><span>马化腾</span><span>柯洁</span>
+          <span>Bin哥</span><span>JackeyLove</span><span>韦世豪</span><span>周琦</span>
+        </div>
+        <p>娱乐向，不是严肃心理学，只负责抽象和好玩。</p>
+      </section>
+
+      <section class="scene" data-start="58" data-end="72">
+        <span class="badge">制作流程</span>
+        <div class="flow">
+          <div class="flow-item"><div class="flow-icon">1</div><div><div class="flow-title">Codex</div><div class="flow-sub">辅助设计题库与代码</div></div></div>
+          <div class="flow-item"><div class="flow-icon">2</div><div><div class="flow-title">GitHub</div><div class="flow-sub">开源项目与版本管理</div></div></div>
+          <div class="flow-item"><div class="flow-icon">3</div><div><div class="flow-title">Cloudflare</div><div class="flow-sub">静态网页部署上线</div></div></div>
+          <div class="flow-item"><div class="flow-icon">4</div><div><div class="flow-title">腾讯云</div><div class="flow-sub">购买域名 csti.site</div></div></div>
+        </div>
+      </section>
+
+      <section class="scene" data-start="72" data-end="84">
+        <span class="badge">测完之后</span>
+        <h2>把结果发评论区</h2>
+        <p>我想看看 B 站到底哪种抽象人格最多。</p>
+        <div class="result-name">战鹰</div>
+      </section>
+
+      <section class="scene" data-start="84" data-end="92">
+        <span class="badge">现在就测</span>
+        <h1>https://<br />csti.site</h1>
+        <p>想看完整教程，也可以留言。</p>
+      </section>
+
+      <div class="subtitle" id="subtitle">朋友们，我做了一个比 MBTI 更抽象的东西，叫 CSTI。</div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="controls">
+      <button id="play">播放 / 暂停</button>
+      <button id="restart">重播</button>
+      <button id="hide">隐藏按钮</button>
+    </div>
+
+    <script>
+      const duration = 92;
+      const scenes = [...document.querySelectorAll(".scene")];
+      const subtitle = document.querySelector("#subtitle");
+      const progress = document.querySelector("#progress");
+      const stage = document.querySelector("#stage");
+      const subtitles = [
+        [0, 7, "朋友们，我做了一个比 MBTI 更抽象的东西，叫 CSTI。"],
+        [7, 18, "它不测你是 I 人还是 E 人，它直接测你像哪位互联网抽象名人。"],
+        [18, 32, "题目一共 15 道，都是年轻人熟悉的精神状态场景。"],
+        [32, 44, "结果不是简单算几个指数，而是每个名人都有一套完整答题组。"],
+        [44, 58, "结果池里有三十多个可能结果，主打一个测完就想发给朋友。"],
+        [58, 72, "这个网页用 Codex 写代码，GitHub 开源，Cloudflare 部署，腾讯云买域名。"],
+        [72, 84, "现在网站已经上线，测完把结果发评论区。"],
+        [84, 92, "直接打开 https://csti.site，看看你是不是那个最抽象的人。"],
+      ];
+
+      let startTime = performance.now();
+      let pausedAt = 0;
+      let playing = true;
+
+      function update() {
+        const now = performance.now();
+        const t = playing ? Math.min((now - startTime) / 1000, duration) : pausedAt;
+        scenes.forEach((scene) => {
+          const start = Number(scene.dataset.start);
+          const end = Number(scene.dataset.end);
+          scene.classList.toggle("active", t >= start && t < end);
+        });
+        const currentSubtitle = subtitles.find(([start, end]) => t >= start && t < end);
+        subtitle.textContent = currentSubtitle ? currentSubtitle[2] : "";
+        progress.style.width = `${(t / duration) * 100}%`;
+        if (playing && t < duration) requestAnimationFrame(update);
+      }
+
+      document.querySelector("#play").addEventListener("click", () => {
+        if (playing) {
+          pausedAt = Math.min((performance.now() - startTime) / 1000, duration);
+          playing = false;
+        } else {
+          startTime = performance.now() - pausedAt * 1000;
+          playing = true;
+          requestAnimationFrame(update);
+        }
+      });
+
+      document.querySelector("#restart").addEventListener("click", () => {
+        startTime = performance.now();
+        pausedAt = 0;
+        playing = true;
+        requestAnimationFrame(update);
+      });
+
+      document.querySelector("#hide").addEventListener("click", () => {
+        document.body.classList.add("hide-ui");
+      });
+
+      requestAnimationFrame(update);
+    </script>
+  </body>
+</html>
