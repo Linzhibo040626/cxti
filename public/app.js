@@ -12,153 +12,153 @@ const traitLabels = {
 
 const questions = [
   {
-    kicker: "群聊突袭",
-    title: "朋友突然在群里发了一句「这事你怎么看？」你第一反应是？",
+    kicker: "群聊降临",
+    title: "群里突然有人发：『我悟了，人生就是一场大型加载失败。』你怎么接？",
     options: [
-      ["先别急，我把正反两边摆出来。", { logic: 3, warmth: 1 }],
-      ["我直接开麦，先把气势打出来。", { drama: 2, stage: 3 }],
-      ["看谁快冷场，立刻补一个好笑的。", { chaos: 3, warmth: 1 }],
-      ["先问一句：这跟赚钱/升学/上分有关吗？", { hustle: 3, logic: 1 }],
+      ["先别悟，谁来定义一下加载失败？", { logic: 3, chaos: 1 }],
+      ["我直接补一句：但会员可以跳过片头。", { chaos: 3, stage: 1 }],
+      ["别崩，先吃饭，吃完再当哲学家。", { warmth: 3, logic: 1 }],
+      ["截图，发言人已经进入名场面候选。", { stage: 2, drama: 2 }],
     ],
   },
   {
-    kicker: "饭局选择",
-    title: "一桌人纠结吃什么，你会怎么结束这场内耗？",
+    kicker: "赛博早八",
+    title: "早上醒来发现世界像没刷新，但你必须出门，你的精神启动方式是？",
     options: [
-      ["列预算、距离、排队时间，三秒出结论。", { logic: 3, hustle: 1 }],
-      ["我请客，但菜必须按我的节奏来。", { stage: 2, warmth: 2 }],
-      ["随机进一家，命运会给答案。", { chaos: 3, drama: 1 }],
-      ["照顾最饿的人，先让大家坐下。", { warmth: 3 }],
+      ["列三件必须做的事，其他全部延迟加载。", { logic: 2, hustle: 2 }],
+      ["放一首很燃的歌，假装自己在预告片里。", { drama: 2, stage: 2 }],
+      ["给朋友发一句离谱废话，确认自己还活着。", { chaos: 3, warmth: 1 }],
+      ["沉默洗漱，像系统后台自动运行。", { logic: 2, warmth: 1 }],
     ],
   },
   {
-    kicker: "逆风时刻",
-    title: "项目/比赛进入逆风局，你最像哪种队友？",
+    kicker: "外卖玄学",
+    title: "外卖超时 28 分钟，骑手定位在地图上画符，你会？",
     options: [
-      ["复盘每个节点，找到翻盘口。", { logic: 3, hustle: 1 }],
-      ["嘴上很急，但手上操作不停。", { drama: 2, hustle: 2 }],
-      ["先整点节目效果，让士气别掉光。", { chaos: 2, stage: 2 }],
-      ["安抚大家：先把下一步做好。", { warmth: 3, logic: 1 }],
+      ["开始分析路线：这不是配送，是战术绕后。", { logic: 3, chaos: 1 }],
+      ["先给骑手留活路，可能大家都在渡劫。", { warmth: 3 }],
+      ["饿到开麦：今天必须有人给我一个说法。", { drama: 3, stage: 1 }],
+      ["拍下来发群里：新概念电子寻龙点穴。", { chaos: 3, stage: 1 }],
     ],
   },
   {
-    kicker: "表达习惯",
-    title: "你解释一个复杂问题时，最常出现的画风是？",
+    kicker: "抽象会议",
+    title: "一个会议开了 40 分钟，结论是『我们之后再同步』，你脑内弹幕是？",
     options: [
-      ["画框架、分层级、最后给一句结论。", { logic: 3 }],
-      ["举例子举到对面突然懂了。", { warmth: 2, stage: 1 }],
-      ["越讲越兴奋，像在直播间打连招。", { stage: 3, drama: 1 }],
-      ["说着说着冒出一个离谱但准确的比喻。", { chaos: 3, logic: 1 }],
+      ["这个会本质上是时间的殡仪馆。", { chaos: 2, drama: 2 }],
+      ["请给负责人、截止日、验收标准。", { logic: 3, hustle: 2 }],
+      ["大家其实都累了，我来把话说圆。", { warmth: 3, stage: 1 }],
+      ["很好，我已经想好怎么把它讲成段子。", { stage: 2, chaos: 2 }],
     ],
   },
   {
-    kicker: "压力按钮",
-    title: "下面哪件事最容易让你血压上来？",
+    kicker: "朋友圈考古",
+    title: "深夜刷到三年前自己发的矫情动态，你第一反应？",
     options: [
-      ["逻辑漏洞还被硬说成格局。", { logic: 2, drama: 2 }],
-      ["明明能立刻做，却一直开会。", { hustle: 3, drama: 1 }],
-      ["大家都不说真话，空气像没熟的面。", { warmth: 1, chaos: 2 }],
-      ["气氛已经到这了，竟然没人接梗。", { stage: 2, chaos: 2 }],
+      ["别删，这是人类进化的化石证据。", { chaos: 3, warmth: 1 }],
+      ["复盘当年为什么会那样表达。", { logic: 3 }],
+      ["尴尬，但那时候的我也挺真诚。", { warmth: 3, drama: 1 }],
+      ["截图留档，未来可以做反向人设包装。", { stage: 3, hustle: 1 }],
     ],
   },
   {
-    kicker: "社交充电",
-    title: "最适合你的快乐恢复方式是？",
+    kicker: "逆风饭局",
+    title: "饭桌上有人开始讲很离谱但很自信的观点，你会怎么处理？",
     options: [
-      ["一个人整理计划，把脑子擦干净。", { logic: 2, hustle: 1 }],
-      ["跟熟人吃饭，把话说开。", { warmth: 3 }],
-      ["看点高密度名场面，笑到重启。", { chaos: 3 }],
-      ["站到人群中心，开始控场。", { stage: 3, drama: 1 }],
+      ["先问三个问题，让它自己塌。", { logic: 3, stage: 1 }],
+      ["看气氛，不伤人地把话题换走。", { warmth: 3 }],
+      ["我忍不了，必须当场开辩。", { drama: 3, logic: 1 }],
+      ["顺着他说，看看能不能离谱到闭环。", { chaos: 3, stage: 1 }],
     ],
   },
   {
-    kicker: "名场面生成",
-    title: "如果给你一分钟制造一个名场面，你会选？",
+    kicker: "精神工位",
+    title: "如果你的脑子是一张办公桌，现在桌面最显眼的是？",
     options: [
-      ["精准吐槽，句句有证据。", { logic: 2, drama: 2 }],
-      ["突然热血，把大家情绪拉满。", { stage: 2, drama: 3 }],
-      ["一本正经地说非常抽象的话。", { chaos: 3, stage: 1 }],
-      ["给所有人安排任务，场面立刻动起来。", { hustle: 3, stage: 1 }],
+      ["一排待办，每个都写着今天必须赢。", { hustle: 3, logic: 1 }],
+      ["一杯冷掉的咖啡和一堆人生疑问。", { drama: 1, warmth: 1, chaos: 1 }],
+      ["一个喇叭，随时准备发表重要讲话。", { stage: 3, drama: 1 }],
+      ["一个写满箭头的白板，箭头比字多。", { logic: 3 }],
     ],
   },
   {
-    kicker: "人生攻略",
-    title: "你更相信哪种人生攻略？",
+    kicker: "短视频宇宙",
+    title: "你刷到一个 7 秒视频，看完感觉自己被宇宙轻轻打了一拳，你会？",
     options: [
-      ["选赛道比努力姿势更重要。", { logic: 2, hustle: 2 }],
-      ["先做起来，边撞墙边进化。", { hustle: 3, chaos: 1 }],
-      ["关系要真诚，路才走得长。", { warmth: 3 }],
-      ["人活着要有点戏剧感。", { drama: 2, stage: 2 }],
+      ["马上转发：这个世界终于疯得有证据了。", { chaos: 3, stage: 1 }],
+      ["拆它为什么好笑，笑点结构很关键。", { logic: 3, chaos: 1 }],
+      ["收藏，等朋友低落时精准投喂。", { warmth: 3 }],
+      ["模仿一遍，争取青出于蓝。", { stage: 3, hustle: 1 }],
     ],
   },
   {
-    kicker: "被误解后",
-    title: "别人误会你了，你会怎么处理？",
+    kicker: "上头瞬间",
+    title: "你最容易在哪种瞬间突然上头？",
     options: [
-      ["拿事实链条一条条对齐。", { logic: 3 }],
-      ["当场澄清，声音可以大但理要稳。", { drama: 2, stage: 1 }],
-      ["算了，等对方冷静再聊。", { warmth: 3 }],
-      ["把误会变成梗，先让场子松下来。", { chaos: 2, warmth: 1 }],
+      ["有人把简单问题复杂化，还很骄傲。", { logic: 2, drama: 2 }],
+      ["局势已经到斩杀线，没人敢按按钮。", { hustle: 3, drama: 1 }],
+      ["一个梗没人接，像球传到空地。", { chaos: 2, stage: 2 }],
+      ["看见别人硬撑，但没人问他累不累。", { warmth: 3, drama: 1 }],
     ],
   },
   {
-    kicker: "消费冲动",
-    title: "看到一个很想买但不便宜的东西，你会？",
+    kicker: "抽象社交",
+    title: "第一次见面，对方说『我这个人比较正常』，你怎么判断？",
     options: [
-      ["做表格，算使用频率和替代品。", { logic: 3 }],
-      ["喜欢就冲，快乐有时效性。", { chaos: 2, drama: 1 }],
-      ["问懂行朋友，综合口碑再下手。", { warmth: 1, logic: 2 }],
-      ["想办法让它变成生产力工具。", { hustle: 3 }],
+      ["正常人通常不会先声明自己正常。", { logic: 2, chaos: 1 }],
+      ["没事，我也不太稳定，大家公平。", { chaos: 3, warmth: 1 }],
+      ["先观察他对服务员和弱势方的态度。", { warmth: 3, logic: 1 }],
+      ["看他说这句话时有没有镜头感。", { stage: 3, drama: 1 }],
     ],
   },
   {
-    kicker: "对线方式",
-    title: "遇到观点完全相反的人，你的默认打法是？",
+    kicker: "人生补丁",
+    title: "如果人生今晚要更新一个补丁，你最希望修复什么？",
     options: [
-      ["先定义概念，否则全是白吵。", { logic: 3, drama: 1 }],
-      ["抓住核心矛盾，直接上强度。", { drama: 3, stage: 1 }],
-      ["找共同点，能不撕就不撕。", { warmth: 3 }],
-      ["用一句怪话让对方重新组织语言。", { chaos: 3 }],
+      ["修复拖延，但别修得太像上班机器。", { hustle: 2, chaos: 1 }],
+      ["修复表达，让我别把真心说成阴阳怪气。", { warmth: 2, drama: 1 }],
+      ["修复决策，把选项背后的代价显示出来。", { logic: 3 }],
+      ["修复无聊，给每天加一点不可预测事件。", { chaos: 3, stage: 1 }],
     ],
   },
   {
-    kicker: "团队定位",
-    title: "大家一起做事时，你通常承担什么角色？",
+    kicker: "争议热搜",
+    title: "一个争议热搜爆了，所有人都在站队，你会先做什么？",
     options: [
-      ["总设计师：拆任务、定标准。", { logic: 2, hustle: 2 }],
-      ["气氛发动机：人不能散。", { stage: 2, warmth: 2 }],
-      ["临门一脚：关键时刻顶上。", { hustle: 3, drama: 1 }],
-      ["灵感污染源：负责打开奇怪脑洞。", { chaos: 3 }],
+      ["找原始信息，别拿二创当判决书。", { logic: 3 }],
+      ["看各方怎么表演，先不急着入场。", { stage: 1, chaos: 2 }],
+      ["如果有人被网暴，先劝大家别上头。", { warmth: 3 }],
+      ["观点明确就说，模糊时也要说清为什么模糊。", { drama: 2, logic: 2 }],
     ],
   },
   {
-    kicker: "朋友圈文学",
-    title: "你发朋友圈/状态更可能是哪种？",
+    kicker: "队友掉线",
+    title: "团队关键时刻有人掉线，你最真实的反应是？",
     options: [
-      ["一段冷静总结，像月度报告。", { logic: 2 }],
-      ["一句狠话配一张意味深长的图。", { drama: 2, stage: 1 }],
-      ["生活碎片，重点是人情味。", { warmth: 3 }],
-      ["别人看不懂，但你觉得特别准确。", { chaos: 3 }],
+      ["我先补位，骂人等赢了再骂。", { hustle: 3, drama: 1 }],
+      ["立刻重排任务，别让系统继续漏水。", { logic: 3, hustle: 1 }],
+      ["先确认他是不是出事了。", { warmth: 3 }],
+      ["这剧情可以，但导演最好给我解释。", { chaos: 2, stage: 2 }],
     ],
   },
   {
-    kicker: "关键选择",
-    title: "面对一个重要选择，你最看重？",
+    kicker: "精神头像",
+    title: "给你的精神状态配一个头像，最像哪种？",
     options: [
-      ["长期收益和风险边界。", { logic: 2, hustle: 2 }],
-      ["我是不是真的会开心。", { warmth: 1, chaos: 1, drama: 1 }],
-      ["能不能打出个人招牌。", { stage: 3, hustle: 1 }],
-      ["有没有足够大的故事性。", { drama: 3, stage: 1 }],
+      ["戴墨镜的表情包，嘴角写着不服。", { drama: 2, stage: 2 }],
+      ["一只加载中的圆圈，旁边写着别催。", { chaos: 2, warmth: 1 }],
+      ["一张流程图，箭头最终指向睡觉。", { logic: 3, chaos: 1 }],
+      ["一个小太阳，亮但电量告急。", { warmth: 3, stage: 1 }],
     ],
   },
   {
-    kicker: "终极抽象",
-    title: "如果你的精神世界是一间屋子，里面最显眼的是？",
+    kicker: "终极选择",
+    title: "如果今晚必须给世界留下一句抽象遗言，你会选？",
     options: [
-      ["一面白板，写满箭头和因果。", { logic: 3 }],
-      ["一盏聚光灯，随时准备开场。", { stage: 3 }],
-      ["一张大圆桌，朋友来了就有位置。", { warmth: 3 }],
-      ["一个按钮，按下去谁也不知道发生什么。", { chaos: 3, drama: 1 }],
+      ["别急着站队，先看定义。", { logic: 3 }],
+      ["来都来了，先把场面撑住。", { stage: 2, drama: 2 }],
+      ["人可以离谱，但别没良心。", { warmth: 3, drama: 1 }],
+      ["我宣布：此刻开始进入隐藏剧情。", { chaos: 3, stage: 1 }],
     ],
   },
 ];
@@ -197,10 +197,52 @@ const profiles = [
   profile("罗永浩", "理想主义嘴炮产品经理", { drama: 84, logic: 78, warmth: 52, hustle: 86, chaos: 70, stage: 94 }, "#79d4ff", "你擅长把产品、观点和情绪一起讲到沸腾。即使现实很硬，你也会试图用表达和行动撬出一个新局面。", ["表达极具个人风格，适合做发布和说服。", "理想感强，遇到坑也愿意继续修路。", "要留意承诺边界，热血之外还需要余量。"]),
 ];
 
+const profileAnswerKeys = {
+  "徐静雨": [3, 1, 2, 3, 3, 2, 2, 3, 0, 3, 2, 3, 0, 0, 1],
+  "峰哥": [0, 3, 0, 1, 1, 0, 3, 1, 0, 0, 2, 0, 1, 2, 0],
+  "张雪峰": [0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 2, 0, 1, 2, 0],
+  "战鹰": [1, 2, 1, 0, 0, 3, 1, 0, 2, 1, 3, 2, 3, 1, 3],
+  "吴京": [3, 1, 2, 1, 3, 2, 0, 3, 1, 3, 0, 3, 0, 0, 1],
+  "何炅": [2, 2, 1, 2, 2, 1, 1, 2, 3, 2, 1, 2, 2, 3, 2],
+  "黄磊": [2, 3, 1, 2, 2, 1, 3, 2, 3, 2, 2, 2, 2, 3, 2],
+  "孙红雷": [3, 1, 2, 0, 3, 2, 2, 3, 0, 3, 0, 3, 3, 0, 1],
+  "邓超": [1, 2, 3, 3, 0, 3, 2, 3, 2, 1, 3, 1, 3, 0, 3],
+  "Bin哥": [3, 0, 2, 1, 3, 2, 0, 3, 1, 3, 0, 3, 0, 0, 1],
+  "JackeyLove": [1, 1, 2, 0, 3, 3, 0, 3, 1, 1, 0, 1, 0, 0, 3],
+  "罗翔": [0, 3, 0, 1, 1, 0, 3, 1, 0, 2, 2, 0, 1, 2, 0],
+  "郭德纲": [3, 1, 3, 3, 3, 3, 2, 3, 2, 3, 3, 1, 3, 0, 1],
+  "马东": [0, 3, 0, 2, 1, 0, 3, 1, 0, 0, 2, 0, 1, 2, 1],
+  "李诞": [1, 2, 3, 0, 0, 3, 1, 0, 2, 1, 3, 1, 3, 1, 3],
+  "杨超越": [2, 2, 1, 0, 0, 3, 1, 0, 3, 1, 3, 2, 2, 3, 3],
+  "沈腾": [1, 2, 3, 3, 0, 3, 1, 0, 2, 1, 3, 1, 3, 1, 3],
+  "撒贝宁": [0, 1, 0, 3, 1, 0, 2, 3, 0, 3, 2, 3, 1, 0, 1],
+  "雷军": [0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 2, 0, 1, 2, 1],
+  "董宇辉": [2, 3, 1, 2, 2, 1, 1, 2, 3, 2, 1, 2, 2, 3, 2],
+  "王传君": [0, 3, 0, 0, 1, 0, 3, 1, 0, 0, 2, 1, 1, 2, 0],
+  "陈铭": [0, 3, 1, 2, 1, 0, 3, 1, 0, 2, 2, 0, 1, 2, 0],
+  "王建国": [1, 2, 3, 0, 0, 3, 1, 0, 2, 1, 3, 1, 3, 1, 0],
+  "于谦": [2, 3, 1, 2, 2, 1, 1, 2, 3, 2, 1, 2, 2, 1, 2],
+  "陈泽": [1, 2, 3, 0, 0, 3, 2, 0, 2, 1, 3, 1, 3, 0, 3],
+  "马云": [3, 0, 2, 1, 3, 2, 0, 3, 1, 3, 0, 3, 0, 0, 2],
+  "马化腾": [0, 3, 0, 1, 1, 0, 3, 1, 0, 0, 2, 0, 1, 2, 2],
+  "韦世豪": [3, 1, 2, 0, 3, 2, 0, 3, 1, 3, 0, 3, 0, 0, 1],
+  "周琦": [3, 3, 1, 2, 2, 1, 1, 2, 3, 2, 0, 2, 2, 1, 2],
+  "柯洁": [0, 3, 0, 1, 1, 0, 3, 1, 0, 0, 2, 0, 1, 0, 0],
+  "罗永浩": [3, 1, 2, 3, 3, 2, 2, 3, 0, 3, 0, 3, 0, 0, 1],
+};
+
+profiles.forEach((item) => {
+  item.key = profileAnswerKeys[item.name];
+  if (!item.key || item.key.length !== questions.length) {
+    throw new Error('Missing answer key for ' + item.name);
+  }
+});
+
 const state = {
   current: 0,
   answers: [],
   optionOrders: [],
+  answerScores: [],
   scores: createScores(),
 };
 
@@ -246,6 +288,7 @@ function resetQuiz() {
   state.current = 0;
   state.answers = [];
   state.optionOrders = [];
+  state.answerScores = [];
   state.scores = createScores();
   resultScreen.classList.add("hidden");
   quizScreen.classList.remove("hidden");
@@ -261,6 +304,7 @@ function goBack() {
 
   state.current -= 1;
   state.answers.pop();
+  state.answerScores.pop();
   recalculateScores();
   renderQuestion();
 }
@@ -284,7 +328,7 @@ function renderQuestion() {
     button.dataset.letter = String.fromCharCode(65 + index);
     button.style.setProperty("--option-color", ["#ffd84d", "#79d4ff", "#8be28b", "#ff9bb3"][index]);
     button.textContent = label;
-    button.addEventListener("click", () => chooseOption(score));
+    button.addEventListener("click", () => chooseOption(optionIndex, score));
     optionsWrap.appendChild(button);
   });
 }
@@ -305,8 +349,9 @@ function shuffleIndexes(count) {
   return indexes;
 }
 
-function chooseOption(score) {
-  state.answers[state.current] = score;
+function chooseOption(optionIndex, score) {
+  state.answers[state.current] = optionIndex;
+  state.answerScores[state.current] = score;
   applyScore(score);
   state.current += 1;
 
@@ -326,7 +371,7 @@ function applyScore(score) {
 
 function recalculateScores() {
   state.scores = createScores();
-  state.answers.forEach(applyScore);
+  state.answerScores.forEach(applyScore);
 }
 
 function getTraitHint() {
@@ -340,9 +385,7 @@ function getTraitHint() {
 function showResult() {
   progressFill.style.width = "100%";
   const normalized = normalizeScores(state.scores);
-  const winner = profiles
-    .map((item) => ({ item, distance: getDistance(normalized, item.scores) }))
-    .sort((a, b) => a.distance - b.distance)[0].item;
+  const winner = getBestProfile(state.answers);
 
   quizScreen.classList.add("hidden");
   resultScreen.classList.remove("hidden");
@@ -357,10 +400,23 @@ function normalizeScores(rawScores) {
   }, {});
 }
 
-function getDistance(userScores, profileScores) {
-  return traits.reduce((sum, trait) => {
-    const diff = userScores[trait] - profileScores[trait];
-    return sum + diff * diff;
+function getBestProfile(answerKey) {
+  return profiles
+    .map((item, index) => ({
+      item,
+      index,
+      score: getAnswerKeyScore(answerKey, item.key),
+    }))
+    .sort((a, b) => a.score - b.score || a.index - b.index)[0].item;
+}
+
+function getAnswerKeyScore(answerKey, profileKey) {
+  return answerKey.reduce((sum, choice, index) => {
+    if (choice === profileKey[index]) {
+      return sum;
+    }
+    const distance = Math.abs(choice - profileKey[index]);
+    return sum + 10 + distance;
   }, 0);
 }
 
